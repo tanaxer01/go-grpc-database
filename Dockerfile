@@ -5,11 +5,11 @@ COPY go.* .
 
 RUN go mod tidy
 
-COPY . .
+COPY . ./
 
 RUN CGO_ENABLED=0 GOOS=linux go build -a -o out .
 
 FROM alpine:latest
-COPY --from=builder /app/out .
+COPY --from=builder /app/out ./
 
 CMD ["./out"]
