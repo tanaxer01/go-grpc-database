@@ -1,7 +1,7 @@
 FROM golang:1.19 AS builder
 
 WORKDIR /app
-COPY go.* .
+COPY go.* ./
 
 RUN go mod tidy
 
