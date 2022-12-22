@@ -23,6 +23,8 @@ jobs:
         with:
           git_remote_url: 'ssh://dokku@170.187.163.225:22/server1'
           ssh_private_key: '${{ secrets.SSH_PRIVATE_KEY }}'
+          secrets: |
+            APM_TOKEN
         env:
             ELASTIC_APM_SECRET_TOKEN: ${{ secrets.APM_TOKEN }}
             ELASTIC_APM_SERVER_URL: "https://af5fa4e4cf0f41ea957b815e9d6626fe.apm.southamerica-east1.gcp.elastic-cloud.com:443"
