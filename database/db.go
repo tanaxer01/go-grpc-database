@@ -23,13 +23,15 @@ type ValorMoneda struct {
 var DB *gorm.DB
 
 func init() {
+  dsn := "postgres://postgres:eea5c72fed95692a0b42bd2e3832f041@dokku-postgres-monedas-db:5432/monedas_db"
+  /*
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s, sslmode=disable",
-		os.Getenv("DB_HOST"),
+		os.Getenv("DOKKU_POSTGRES_OP_NAME"),
 		os.Getenv("DB_USER"),
 		os.Getenv("DB_PASS"),
 		os.Getenv("DB_NAME"),
 		os.Getenv("DB_PORT"),
-	)
+	)*/
 
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
 		Logger: logger.Default.LogMode(logger.Error),
