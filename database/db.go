@@ -23,7 +23,6 @@ type ValorMoneda struct {
 var DB *gorm.DB
 
 func init() {
-  /*
 	dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s, sslmode=disable",
 		os.Getenv("DB_HOST"),
 		os.Getenv("DB_USER"),
@@ -45,7 +44,6 @@ func init() {
 	db.AutoMigrate(&ValorMoneda{})
 
 	DB = db
-  */
 }
 
 func GetValores(moneda string, start time.Time, end time.Time) ([]ValorMoneda, error) {
